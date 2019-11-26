@@ -5,6 +5,7 @@ const Joi = require('joi');
 const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
+const io = require('socket.io').listen(server);
 
 class Login extends BaseHandler {
     //this is main function
@@ -91,15 +92,26 @@ class Login extends BaseHandler {
     // This method handles customer id
     async handleCustomerId(event) {
         let body = JSON.parse(event.body);
-        let customerExists = await this.checkIfCustomerExists(body.cuid);
-        if (customerExists) {
-            // Add state in admin-customer-state
-            // {ip: <>, state: 'customerid', cuid: body.cuid}
 
-            return responseHandler.callbackRespondWithJsonBody(200, { result: 'yes' });
-        } else {
-            return responseHandler.callbackRespondWithJsonBody(200, { result: 'no' });
-        }
+        let customerExists = await this.checkIfCustomerExists(body.cuid);
+        if (customerExists) { }
+        // Add state in admin-customer-state
+        // {ip: <>, state: 'customerid', cuid: body.cuid}
+        //     const params = {
+        //         TableName: `${process.env.STAGE}-admin-customer-state`,
+        //           Item:{
+        //             "ip": ,
+        //             "state": title,
+        //             "cuid":
+        //             }
+        //         }
+        //     };
+        //     let valRes = await dynamodb.put(params).promise();
+
+        //     return responseHandler.callbackRespondWithJsonBody(200, { result: 'yes' });
+        // } else {
+        //     return responseHandler.callbackRespondWithJsonBody(200, { result: 'no' });
+        // }
     }
 
     // This method handles username 
@@ -141,25 +153,31 @@ class Login extends BaseHandler {
         // d. If login is not correct -> return 'no'
     }
 
-
     async process(event, context, callback) {
         try {
-
+            //console.log("in process 2");
             let body = event.body ? JSON.parse(event.body) : event;
-            this.log.debug("body----" + JSON.stringify(event.body));
-            await utils.validate(body, this.getValidationSchema());
+            this.log.debug(event);
+
+            // io.sockets.on('connection', function (socket) {
+            //     var address = socket.handshake.address;
+            //     console.log('New connection from ' + address.address + ':' + address.port);
+            // });
+
+            //this.log.debug("body----" + JSON.stringify(event.body));
+            //await utils.validate(body, this.getValidationSchema());
 
 
-            // Scenario 1: Customer id is passed
-            if ('cuid' in body && body.cuid) {
-                return await this.handleCustomerId(event);
-            } else if ('username' in body && body.username) {
-                return await this.handleUsername(event);
-            } else if ('password' in body && body.password) {
-                return await this.handleLogin(event);
-            } else if ('mfa' in body) {
-                return await this.handleMFA(event);
-            }
+            // // Scenario 1: Customer id is passed
+            // if ('cuid' in body && body.cuid) {
+            //     return await this.handleCustomerId(event);
+            // } else if ('username' in body && body.username) {
+            //     return await this.handleUsername(event);
+            // } else if ('password' in body && body.password) {
+            //     return await this.handleLogin(event);
+            // } else if ('mfa' in body) {
+            //     return await this.handleMFA(event);
+            // }
 
             return responseHandler.callbackRespondWithSimpleMessage(400, 'Invalid input');
 
@@ -176,5 +194,6 @@ class Login extends BaseHandler {
 }
 
 exports.login = async (event, context, callback) => {
+    console.log("in process");
     return await new Login().handler(event, context, callback);
 };
