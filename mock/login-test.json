@@ -1,8 +1,15 @@
 {
-    "path": "/", 
-    "httpMethod": "{POST}",    
+    "path": "/",
+    "httpMethod": "{POST}",
     "queryStringParameters": null,
-    "pathParameters": {"cuid":"8MELOS9Q"},    
+    "pathParameters": {
+        "cuid": "8MELOS9Q"
+    },
     "body": "{\"cid\":\"000004\",\"username\":\"poonam_test_01@gmail.com\",\"password\":\"WXMWVRDY\",\"mfa\":\"2SV\"}",
-    "isBase64Encoded": false
+    "isBase64Encoded": false,
+    "requestContext": {
+        "identity": {
+            "sourceIp": "42.108.235.0"
+        }
+    }
 }
