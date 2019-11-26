@@ -5,7 +5,7 @@ const Joi = require('joi');
 const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
-const io = require('socket.io').listen(server);
+//const io = require('socket.io').listen(server);
 
 class Login extends BaseHandler {
     //this is main function

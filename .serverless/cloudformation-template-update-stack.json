@@ -134,7 +134,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/cw-login/dev/1574788406534-2019-11-26T17:13:26.534Z/cw-login.zip"
+          "S3Key": "serverless/cw-login/dev/1574789618940-2019-11-26T17:33:38.940Z/cw-login.zip"
         },
         "FunctionName": "cw-login-dev-login",
         "Handler": "handlers/login.login",
@@ -158,14 +158,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "LoginLambdaVersion7Dv3KWrPLWbmohgssvKamZ41YIYYSjnfP8jjReSefak": {
+    "LoginLambdaVersionSvsvUfyfIU5Nyxy9GCX5OOkCYprc9qR2YzTvMfl2g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "LoginLambdaFunction"
         },
-        "CodeSha256": "ItuvLO3xwHPh1XAI1sJ8MJIPBJ1V2AHLPiVzVJVTxLg="
+        "CodeSha256": "Ig4bSfB+ypvWBCz9nzVbNY8x5ZkBYTo203rMccm7AnQ="
       }
     },
     "ApiGatewayRestApi": {
@@ -284,7 +284,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1574788390686": {
+    "ApiGatewayDeployment1574789614447": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -363,7 +363,7 @@
     "LoginLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "LoginLambdaVersion7Dv3KWrPLWbmohgssvKamZ41YIYYSjnfP8jjReSefak"
+        "Ref": "LoginLambdaVersionSvsvUfyfIU5Nyxy9GCX5OOkCYprc9qR2YzTvMfl2g"
       }
     },
     "ServiceEndpoint": {
