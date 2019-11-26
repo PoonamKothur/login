@@ -47,7 +47,7 @@ resources:
     AdminCustomerStateTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: {opt:stage}-admin-customer-state
+        TableName: ${opt:stage}-admin-customer-state
         AttributeDefinitions:
           - AttributeName: ip
             AttributeType: S
