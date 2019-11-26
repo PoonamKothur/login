@@ -157,7 +157,7 @@ class Login extends BaseHandler {
         try {
             console.log("in process 2");
             let body = event.body ? JSON.parse(event.body) : event;
-            this.log.debug(body);
+            console.log(body);
 
             // io.sockets.on('connection', function (socket) {
             //     var address = socket.handshake.address;

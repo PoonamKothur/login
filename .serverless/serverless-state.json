@@ -163,7 +163,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/cw-login/dev/1574790115896-2019-11-26T17:41:55.896Z/cw-login.zip"
+                "S3Key": "serverless/cw-login/dev/1574790538628-2019-11-26T17:48:58.628Z/cw-login.zip"
               },
               "FunctionName": "cw-login-dev-login",
               "Handler": "handlers/login.login",
@@ -187,14 +187,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "LoginLambdaVersionYfmqriPqJny1Mlss9E1AwLdwFczz2A8tvyU7pcGeWvM": {
+          "LoginLambdaVersionRkKlvaCsgDTc1Rn5WxtCwrZzxp3z2jzMrNEtMAk7rY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "LoginLambdaFunction"
               },
-              "CodeSha256": "IuY1yyoLNqaLUC9pqf+umBM5xI9cWLtUKV/CYbbcK6k="
+              "CodeSha256": "RzxIGmhlU21blo32160AHMq6W3V6GkBmYRxFvDFD4ho="
             }
           },
           "ApiGatewayRestApi": {
@@ -208,22 +208,7 @@
               }
             }
           },
-          "ApiGatewayResourceCuid": {
-            "Type": "AWS::ApiGateway::Resource",
-            "Properties": {
-              "ParentId": {
-                "Fn::GetAtt": [
-                  "ApiGatewayRestApi",
-                  "RootResourceId"
-                ]
-              },
-              "PathPart": "cuid",
-              "RestApiId": {
-                "Ref": "ApiGatewayRestApi"
-              }
-            }
-          },
-          "ApiGatewayMethodCuidOptions": {
+          "ApiGatewayMethodOptions": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
               "AuthorizationType": "NONE",
@@ -263,20 +248,26 @@
                 ]
               },
               "ResourceId": {
-                "Ref": "ApiGatewayResourceCuid"
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               }
             }
           },
-          "ApiGatewayMethodCuidPost": {
+          "ApiGatewayMethodPost": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
               "HttpMethod": "POST",
               "RequestParameters": {},
               "ResourceId": {
-                "Ref": "ApiGatewayResourceCuid"
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -313,7 +304,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1574790095363": {
+          "ApiGatewayDeployment1574790525517": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -322,8 +313,8 @@
               "StageName": "dev"
             },
             "DependsOn": [
-              "ApiGatewayMethodCuidOptions",
-              "ApiGatewayMethodCuidPost"
+              "ApiGatewayMethodOptions",
+              "ApiGatewayMethodPost"
             ]
           },
           "LoginLambdaPermissionApiGateway": {
@@ -392,7 +383,7 @@
           "LoginLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "LoginLambdaVersionYfmqriPqJny1Mlss9E1AwLdwFczz2A8tvyU7pcGeWvM"
+              "Ref": "LoginLambdaVersionRkKlvaCsgDTc1Rn5WxtCwrZzxp3z2jzMrNEtMAk7rY"
             }
           },
           "ServiceEndpoint": {
@@ -460,7 +451,7 @@
         "events": [
           {
             "http": {
-              "path": "cuid",
+              "path": "",
               "method": "post",
               "cors": {
                 "origins": [
@@ -522,7 +513,7 @@
     "artifact": "/home/poonam/CodeBlock/Projects/CecureCloud/Code/cecurecloud/login/.serverless/cw-login.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/cw-login/dev/1574790115896-2019-11-26T17:41:55.896Z",
+    "artifactDirectoryName": "serverless/cw-login/dev/1574790538628-2019-11-26T17:48:58.628Z",
     "artifact": "cw-login.zip"
   }
 }
