@@ -38,7 +38,7 @@ functions:
     handler: handlers/login.login
     events:
       - http:
-          path: cuid
+          path: /
           method: post
           cors: true
 
