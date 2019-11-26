@@ -163,7 +163,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/cw-login/dev/1574790538628-2019-11-26T17:48:58.628Z/cw-login.zip"
+                "S3Key": "serverless/cw-login/dev/1574790712630-2019-11-26T17:51:52.630Z/cw-login.zip"
               },
               "FunctionName": "cw-login-dev-login",
               "Handler": "handlers/login.login",
@@ -187,14 +187,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "LoginLambdaVersionRkKlvaCsgDTc1Rn5WxtCwrZzxp3z2jzMrNEtMAk7rY": {
+          "LoginLambdaVersionlYzMJHOt4M2ijnlunv4E1xT3ImmwA8RisOJd81l3k2M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "LoginLambdaFunction"
               },
-              "CodeSha256": "RzxIGmhlU21blo32160AHMq6W3V6GkBmYRxFvDFD4ho="
+              "CodeSha256": "viGRjCY3DhPxS1goffXK+53Ea5qyQ1w0XpT6np1F/ng="
             }
           },
           "ApiGatewayRestApi": {
@@ -304,7 +304,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1574790525517": {
+          "ApiGatewayDeployment1574790708185": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -383,7 +383,7 @@
           "LoginLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "LoginLambdaVersionRkKlvaCsgDTc1Rn5WxtCwrZzxp3z2jzMrNEtMAk7rY"
+              "Ref": "LoginLambdaVersionlYzMJHOt4M2ijnlunv4E1xT3ImmwA8RisOJd81l3k2M"
             }
           },
           "ServiceEndpoint": {
@@ -513,7 +513,7 @@
     "artifact": "/home/poonam/CodeBlock/Projects/CecureCloud/Code/cecurecloud/login/.serverless/cw-login.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/cw-login/dev/1574790538628-2019-11-26T17:48:58.628Z",
+    "artifactDirectoryName": "serverless/cw-login/dev/1574790712630-2019-11-26T17:51:52.630Z",
     "artifact": "cw-login.zip"
   }
 }
