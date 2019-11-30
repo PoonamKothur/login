@@ -64,7 +64,7 @@ plugins:
 Type: AWS::IAM::Role
 Properties: 
   AssumeRolePolicyDocument:
-    Version: "2012-10-17"
+    Version: 2012-10-17
     Statement: 
      -
        Effect: Allow
@@ -77,4 +77,4 @@ Properties:
   MaxSessionDuration: 1 hour
   Policies: 
     - SNS
-  RoleName: SMS-Role
+  RoleName: SMS-Role-test
