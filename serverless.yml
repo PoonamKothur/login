@@ -74,7 +74,6 @@ Properties:
   Description: IAM role for send SMS using AWS SNS
   ManagedPolicyArns: 
     - arn:aws:iam::738146172566:policy/service-role/Cognito-1509099821021
-  MaxSessionDuration: 1 hour
   Policies: 
     - SNS
-  RoleName: SMS-Role-test
+  RoleName: PoonamSMS-Role-test
