@@ -1,0 +1,15 @@
+{
+    "path": "/",
+    "httpMethod": "{POST}",
+    "queryStringParameters": null,
+    "pathParameters": {
+        "cuid": "8MELOS9Q"
+    },
+    "body": "{\"username\":\"HZ9LQ9NW\"}",
+    "isBase64Encoded": false,
+    "requestContext": {
+        "identity": {
+            "sourceIp": "42.108.235.0"
+        }
+    }
+}

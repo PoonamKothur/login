@@ -59,3 +59,22 @@ resources:
 plugins:
   - serverless-pseudo-parameters
   - serverless-cognito-add-custom-attributes
+
+
+Type: AWS::IAM::Role
+Properties: 
+  AssumeRolePolicyDocument:
+    Version: "2012-10-17"
+    Statement: 
+     -
+       Effect: Allow
+       Action:
+         - sns:publish
+       Resource: '*'
+  Description: IAM role for send SMS using AWS SNS
+  ManagedPolicyArns: 
+    - arn:aws:iam::738146172566:policy/service-role/Cognito-1509099821021
+  MaxSessionDuration: 1 hour
+  Policies: 
+    - SNS
+  RoleName: SMS-Role

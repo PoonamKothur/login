@@ -21,7 +21,8 @@
        'X-Amzn-Trace-Id': 'Root=1-5ddd66d1-67bcfc530ce6f31056cac7d2',
        'X-Forwarded-For': '42.108.235.0, 130.176.76.172',
        'X-Forwarded-Port': '443',
-       'X-Forwarded-Proto': 'https' },
+       'X-Forwarded-Proto': 'https' 
+    },
     multiValueHeaders:
      { Accept: [ '*/*' ],
        'Accept-Encoding': [ 'gzip, deflate' ],
